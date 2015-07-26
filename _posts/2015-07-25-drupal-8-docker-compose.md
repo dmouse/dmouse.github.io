@@ -9,7 +9,7 @@
 ---
 
 ### Usage
-In the first time you only should put this files in your root Drupal 8 project.
+Only put this files in your root Drupal 8 project.
 
 {% highlight html %}
 $ docker-compose up
