@@ -1,39 +1,52 @@
 ---
 layout: default
 ---
-<div id="home" class="page-content wc-container">
-	<div class="posts">
-  		{% for post in site.posts limit:10 %}
-  			<div class="post">
-    			<h3 class="post-title">
-			      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">
-			        {{ post.title }}
-			      </a>
-    			</h3>
 
-          <p class="post-meta">
-            {% if (post.categories.size > 0 %}
-            <span class="categories">
-            {{ post.categories | array_to_sentence_string }}
-            </span> |
-            {% endif %}
-            <span class="post-date">
-            {{ post.date | date: "%b %-d, %Y" }} 
-            </span>
-          </p>          
-    			    			
-  				<p>
-	  				{{ post.excerpt }}	
-  				</p>
-  				<p>
-  					<a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}" title="{{ post.title}}">
-  						Read More
-					</a>
-  				</p>
-  			</div>
-  		{% endfor %}
-	</div>
-	<div class="post-footer">
-		<div class="column-full"><a href="{{ '/blog' | prepend: site.baseurl | prepend: site.url }}">Blog archive</a></div>
-	</div>
+<div class="wrapper">
+
+  <div itemscope itemtype="http://schema.org/Person">
+    <h1 itemprop="name">David Flores</h1>
+    <img src="https://avatars0.githubusercontent.com/u/198571?v=4" itemprop="image" alt="David Flores"/>
+    <span itemprop="jobTitle">Web Developer</span>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <span itemprop="addressLocality">Coyoacan</span>,
+      <span itemprop="addressRegion">Mexico City</span>
+    </div>
+
+    <a itemprop="sameAs" href="https://www.twitter.com/dmouse" itemprop="url">Twitter</a>
+    <a itemprop="sameAs" href="https://www.linkedin.com/in/dafvel" itemprop="url">LinkedIn</a>
+    <a itemprop="sameAs" href="https://www.drupal.org/u/dmouse" itemprop="url">Drupal</a>
+    <a itemprop="sameAs" href="https://github.com/dmouse" itemprop="url">Github</a>
+    <a itemprop="sameAs" href="https://dmouse.net" itemprop="url">Blog</a>
+
+  </div>
+
+  <div class="row row--full">
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="row row--full">
+    {% include pagination.html %}
+  </div>
+
 </div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "David Flores",
+  "url": "https://dmouse.net",
+  "sameAs": [
+    "https://www.twitter.com/dmouse",
+    "https://www.linkedin.com/in/dafvel",
+    "https://www.drupal.org/u/dmouse",
+    "https://github.com/dmouse",
+    "https://dmouse.net"
+  ]
+}
+</script>

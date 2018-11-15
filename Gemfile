@@ -1,8 +1,14 @@
 source 'https://rubygems.org'
 
-require 'json'
-require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+gem 'minitest', '>= 5.11.3'
+gem 'pkg-config', '~> 1.1'
+gem 'jekyll-feed', '>=0.11.0'
+gem 'bundler'
+gem 'jekyll'
+gem 'jekyll-paginate'
+gem 'jekyll-tagging'
+#gem 'colorator', '>=1.1.0'
+#gem 'public_suffix', '>=3.0.3'
+gem 'github-pages', group: :jekyll_plugins
 
-gem 'github-pages', versions['github-pages']
-gem 'rake'
+

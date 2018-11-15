@@ -1,62 +1,58 @@
-# Harmony Jekyll theme general configurations
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Base URL
-baseurl:
+# Site settings
+title:            Have you mooed today?
+email:            david+site@indava.com
+description:      'David Flores'
+baseurl:          '' # The subpath of your site, e.g. /blog
+url:              '' # The base hostname & protocol for your site
+github_username:  dmouse
+twitter_username: dmouse
 
-# Site live URL
-# url: http://dmouse.net
+markdown:  kramdown
+permalink: pretty
+paginate:  12
 
-# Localhost
-# url: http://127.0.0.1:4000
+plugins:
+  - jekyll-paginate
+  - jekyll/tagging
+  - jekyll-feed
 
-# Harmony theme configuration. Please change accordingly.
-harmony:
-  name: Have you mooed today?
-  # Little description about your site
-  description: David Flores
-  # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and
-  # in your feed.xml site description.
-  meta_description: > #
-   Drupal, Drupal 8, Symfony, Docker, Open Source. In this blog you can find some open source stuffs.
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
-  author: # Author details
-    name: David Flores
-    email: me@dmouse.net
-    url: http://dmouse.net
-
-  # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-xxxx-x
-
-  # Profile links, leave blank to ignore
-  social:
-    github: dmouse
-    twitter: dmouse
-    facebook:
-    gplus:
-    dribble:
-    pinterest:
-  # Toggle disclaimer in footer
-  show_disclaimer: true
-
-# Conversion / Build settings
-markdown:    kramdown
-# This is how you put pygments config in jekyll 2.0 instead of pygments: true
-highlighter: pygments
-
-# Permalinks
-permalink:        pretty
+include:
+  - _pages
 
 exclude:
-  - CNAME
+  - vendor
   - Gemfile
-  - Rakefile
-  - README.md
-  - .gitignore
-  - .sass-cache
   - Gemfile.lock
 
-# Sass conversion configs
 sass:
-    sass_dir: assets/css/_sass
-    style: :compressed
+  style: compressed
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag_page
+tag_permalink_style:  pretty
+
+# Pages path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+# Authors
+authors:
+  ahmad:
+    name:             David Flores
+    bio:              ''
+    gravatar:         https://avatars0.githubusercontent.com/u/198571?v=4
+    email:            david+site@indava.com
+    website:          http://dmouse.net
+    github_username:  dmouse
+    twitter_username: dmouse
